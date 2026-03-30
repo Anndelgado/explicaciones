@@ -83,6 +83,20 @@ print(borrar)
 for coder, valor in coders.items():
   print(coder, "-", valor)
 
-
+def buscar_usuario(diccionario):
+    try:
+        id_usuario = int(input("Ingrese el ID del estudiante: "))
+    except ValueError:
+        print("Debe ingresar un número válido")
+        return
+    
+    usuario = diccionario.get(id_usuario)
+    
+    if usuario:
+        print("\n--- Información del estudiante ---")
+        for clave, valor in usuario.items():
+            print(f"{clave.capitalize()}: {valor}")
+    else:
+        print("Usuario no encontrado")
 
 
